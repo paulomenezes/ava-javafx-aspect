@@ -1,4 +1,4 @@
-package com;
+package com.ufrpe.ava;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("ufrpe/ava/view/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/mainWindow.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 400, 300));
         primaryStage.show();
