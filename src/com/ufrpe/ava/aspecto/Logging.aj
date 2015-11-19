@@ -1,4 +1,4 @@
-package com.ufrpe.ava.aspect;
+package com.ufrpe.ava.aspecto;
 
 /**
  * Created by paulomenezes on 17/11/15.
@@ -6,7 +6,7 @@ package com.ufrpe.ava.aspect;
 public aspect Logging {
 
     pointcut logLogin():
-            execution (* com.ufrpe.ava.controller.LoginController.*());
+            execution (* Login.*());
 
     after(): logLogin() {
         System.out.println("after");
