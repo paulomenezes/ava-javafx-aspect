@@ -7,6 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class AvaFachada extends Application {
+    private CadastroUsuario cadastroUsuario;
+
+    public AvaFachada() {
+        cadastroUsuario = new CadastroUsuario();
+    }
+
+    public CadastroUsuario getCadastroUsuario() {
+        return cadastroUsuario;
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {

@@ -6,7 +6,7 @@ package com.ufrpe.ava.aspecto;
 public aspect Logging {
 
     pointcut logLogin():
-            execution (* Login.*());
+            execution (* com.ufrpe.ava.gui.controladores.Login.*());
 
     after(): logLogin() {
         System.out.println("after");
