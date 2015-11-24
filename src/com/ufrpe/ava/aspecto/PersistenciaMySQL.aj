@@ -1,9 +1,8 @@
 package com.ufrpe.ava.aspecto;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by paulomenezes on 20/11/15.
@@ -24,19 +23,49 @@ public abstract aspect PersistenciaMySQL {
         return connection;
     }
 
-    public ResultSet procurar(String tabela, int id) {
-        ResultSet resultSet = null;
-
+    public ResultSet selecionar(String tabela) {
         try {
-            int a = 1;
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM ? WHERE id = ?");
-            preparedStatement.setString(a, tabela);
-            preparedStatement.setInt(2, id);
-            resultSet = preparedStatement.executeQuery();
+            Statement statement = connection.createStatement();
+            statement.execute("SELECT * FROM " + tabela);
+            ResultSet resultSet = statement.getResultSet();
+
+            return resultSet;
+        } catch (Exception e) {
+
+        }
+
+        return null;
+    }
+
+    public void inserir(String tabela, HashMap<String, Object> nomeValor) {
+        try {
+            String colunas = "";
+            String camposQuantidade = "";
+
+            int i = 1;
+            for (Map.Entry<String, Object> item : nomeValor.entrySet()) {
+                String nome = item.getKey().replace("get", "").toLowerCase();
+                colunas +=  i == nomeValor.size() ? nome : nome + ", ";
+                camposQuantidade +=  i == nomeValor.size() ? "?" : "?, ";
+                i++;
+            }
+
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO " + tabela + " (" + colunas + ") VALUES (" + camposQuantidade + ")");
+
+            i = 1;
+            for (Map.Entry<String, Object> item : nomeValor.entrySet()) {
+                if (item.getValue() instanceof String)
+                    preparedStatement.setString(i, (String)item.getValue());
+                else if (item.getValue() instanceof Integer)
+                    preparedStatement.setInt(i, (int)item.getValue());
+                else if (item.getValue() instanceof Float)
+                    preparedStatement.setFloat(i, (float)item.getValue());
+
+                i++;
+            }
+            preparedStatement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return resultSet;
     }
 }

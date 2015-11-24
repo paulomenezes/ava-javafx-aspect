@@ -17,6 +17,9 @@ public class Login extends Tela {
     @FXML
     private Button botaoEsqueciSenha;
 
+    @FXML
+    private Button botaoCriarConta;
+
     public void botaoEntrarAction() {
         System.out.println("CPF: " + campoCPF.getText());
         System.out.println("Senha: " + campoSenha.getText());
@@ -53,5 +56,11 @@ public class Login extends Tela {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
+    }
+
+    public void botaoCriarContaAction() {
+        System.out.println("Criar conta");
+
+        trocarTela("cadastro", botaoCriarConta);
     }
 }
