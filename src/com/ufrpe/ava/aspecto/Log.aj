@@ -3,7 +3,7 @@ package com.ufrpe.ava.aspecto;
 /**
  * Created by paulomenezes on 17/11/15.
  */
-public aspect Logging {
+public aspect Log {
 
     pointcut logLogin():
             execution (* com.ufrpe.ava.gui.controladores.Login.*());

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.AreaChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.Pane?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.text.*?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ufrpe.ava.gui.controladores.Inicio">
    <children>
-      <MenuBar prefHeight="29.0" prefWidth="600.0">
+      <MenuBar prefHeight="29.0" prefWidth="597.0">
         <menus>
           <Menu mnemonicParsing="false" text="Arquivo">
             <items>
@@ -18,10 +17,11 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Cadastros">
             <items>
-              <MenuItem mnemonicParsing="false" text="Usuários" />
+              <MenuItem fx:id="botaoUsuario" mnemonicParsing="false" onAction="#menuUsuarioAction" text="Usuários" />
                   <MenuItem mnemonicParsing="false" text="Cursos" />
                   <MenuItem mnemonicParsing="false" text="Disciplinas" />
                   <MenuItem mnemonicParsing="false" text="Matrículas" />
+                  <MenuItem mnemonicParsing="false" text="Pesquisa" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Relatórios">
@@ -37,13 +37,42 @@
             </Menu>
         </menus>
       </MenuBar>
-      <AreaChart layoutX="14.0" layoutY="37.0">
-        <xAxis>
-          <CategoryAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-      </AreaChart>
+      <Pane layoutY="29.0" prefHeight="98.0" prefWidth="597.0" style="-fx-background-color: #EEE;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Label alignment="CENTER" layoutX="29.0" layoutY="20.0" prefHeight="36.0" prefWidth="80.0" text="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="64.0" prefHeight="16.0" prefWidth="80.0" text="Professores" textAlignment="CENTER" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="63.0" prefHeight="16.0" prefWidth="80.0" text="Alunos" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="151.0" layoutY="19.0" prefHeight="36.0" prefWidth="80.0" text="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="272.0" layoutY="19.0" prefHeight="36.0" prefWidth="80.0" text="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="63.0" prefHeight="16.0" prefWidth="80.0" text="Cursos" textAlignment="CENTER" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="388.0" layoutY="63.0" prefHeight="16.0" prefWidth="80.0" text="Pesquisas" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="388.0" layoutY="19.0" prefHeight="36.0" prefWidth="80.0" text="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="503.0" layoutY="63.0" prefHeight="16.0" prefWidth="80.0" text="Artigos" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="503.0" layoutY="19.0" prefHeight="36.0" prefWidth="80.0" text="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </Pane>

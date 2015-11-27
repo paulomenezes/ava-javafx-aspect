@@ -1,5 +1,7 @@
 package com.ufrpe.ava.dados.entidades;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 /**
@@ -32,5 +34,9 @@ public class Entidade {
 
     public void setDataAtualizacao(Date dataAtualizacao) {
         this.dataAtualizacao = dataAtualizacao;
+    }
+
+    public void converter(ResultSet resultSet) throws SQLException {
+        this.setId(resultSet.getInt("id"));
     }
 }

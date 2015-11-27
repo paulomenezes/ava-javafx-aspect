@@ -35,7 +35,7 @@ public class Cadastro extends Tela {
         System.out.println("Criar conta");
 
         if (this.avaFachada.getCadastroUsuario().cadastrarUsuario(campoCPF.getText(), campoSenha.getText(), campoNome.getText(), campoEmail.getText()) != null) {
-            trocarTela("inicio", botaoCriarConta);
+            trocarTela("telaUsuarios", botaoCriarConta);
         }
     }
 }

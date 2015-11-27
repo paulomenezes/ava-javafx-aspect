@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ufrpe.ava.gui.controladores.TelaUsuarios">
+    <children>
+        <MenuBar prefHeight="29.0" prefWidth="600.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Arquivo">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Inicio" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Sair" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Cadastros">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Usuários" />
+                        <MenuItem mnemonicParsing="false" text="Cursos" />
+                        <MenuItem mnemonicParsing="false" text="Disciplinas" />
+                        <MenuItem mnemonicParsing="false" text="Matrículas" />
+                        <MenuItem mnemonicParsing="false" text="Pesquisa" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Relatórios">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Desempenho Alunos" />
+                        <MenuItem mnemonicParsing="false" text="Professores" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Ajuda">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Sobre" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+      <TableView fx:id="tabela" layoutX="14.0" layoutY="77.0" prefHeight="361.0" prefWidth="571.0">
+        <columns>
+
+        </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="44.0" mnemonicParsing="false" text="Inserir" />
+      <Button layoutX="79.0" layoutY="44.0" mnemonicParsing="false" text="Atualizar" />
+      <Button layoutX="156.0" layoutY="44.0" mnemonicParsing="false" text="Procurar" />
+      <Button layoutX="233.0" layoutY="44.0" mnemonicParsing="false" text="Remover" />
+    </children>
+</Pane>

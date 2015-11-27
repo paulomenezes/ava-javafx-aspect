@@ -27,7 +27,7 @@ public class Login extends Tela {
         if (campoCPF.getText().length() > 0 && campoSenha.getText().length() > 0) {
             Usuario usuario = this.avaFachada.getCadastroUsuario().login(campoCPF.getText(), campoSenha.getText());
             if (usuario != null) {
-                System.out.println(usuario.getNome());
+                trocarTela("telaUsuarios", botaoCriarConta);
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Login inválido");

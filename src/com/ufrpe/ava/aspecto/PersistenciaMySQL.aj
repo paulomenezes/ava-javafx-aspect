@@ -1,6 +1,8 @@
 package com.ufrpe.ava.aspecto;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,20 +23,6 @@ public abstract aspect PersistenciaMySQL {
         }
 
         return connection;
-    }
-
-    public ResultSet selecionar(String tabela) {
-        try {
-            Statement statement = connection.createStatement();
-            statement.execute("SELECT * FROM " + tabela);
-            ResultSet resultSet = statement.getResultSet();
-
-            return resultSet;
-        } catch (Exception e) {
-
-        }
-
-        return null;
     }
 
     public void inserir(String tabela, HashMap<String, Object> nomeValor) {
