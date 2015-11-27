@@ -475,6 +475,23 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
+-- -----------------------------------------------------
+-- Table `ava`.`solicitacao_projeto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS ava.solicitacao_projeto(
+	idSolicitacao INT NOT NULL AUTO_INCREMENT,
+    idAluno		  INT NOT NULL,
+    idProjeto     INT NOT NULL,
+    estado 		  BOOL NOT NULL,
+    PRIMARY KEY(idSolicitacao,idAluno,idProjeto),
+    FOREIGN KEY(idAluno) REFERENCES ava.aluno(idAluno)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+    FOREIGN KEY(idProjeto) REFERENCES ava.projetopesquisa(id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
