@@ -5,7 +5,8 @@ package com.ufrpe.ava.dados.entidades;
  */
 public class Departamento extends Entidade {
     private String nome;
-
+    private int codigo;
+    
     public String getNome() {
         return nome;
     }
@@ -13,4 +14,12 @@ public class Departamento extends Entidade {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
 }
