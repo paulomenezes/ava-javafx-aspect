@@ -6,7 +6,8 @@ import java.util.Map;
 public class Curso extends Entidade{
 	private String nome;
 	private int quantAlunos;
-	private Map<Integer, Disciplina> gradeDisciplina = new HashMap<Integer, Disciplina>(); //Integer é o período e a Disciplina
+	//Integer é o período e a Disciplina
+	private Map<Integer, Disciplina> gradeDisciplina = new HashMap<Integer, Disciplina>(); 
 	private Departamento departamento;
 	private int codCurso;
 	

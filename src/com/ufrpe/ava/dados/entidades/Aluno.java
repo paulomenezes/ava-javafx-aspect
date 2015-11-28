@@ -1,7 +1,7 @@
 package com.ufrpe.ava.dados.entidades;
 
 public class Aluno extends Usuario{
-	private String tipoAluno; //mestrado, doutorado, graduando, lá na tabela é por número
+	private String tipoAluno; //mestrado, doutorado, graduando
 	private Curso curso;
 	
 	public String getTipoAluno(){

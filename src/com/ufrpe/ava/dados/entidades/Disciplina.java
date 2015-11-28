@@ -1,17 +1,14 @@
 package com.ufrpe.ava.dados.entidades;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Disciplina extends Entidade{
 	private int codDisciplina;
 	private String nome;
 	private int cargaHoraria;
 	private int creditos;
-	private int tipo; //não sei o que é
+	private String tipo; //não sei o que é
 	//String = dia, Integer = horário. Uma disciplina pode ter mais de um horário
-	private Map<String, Integer> horario = new HashMap<String, Integer>();
 	private ArrayList<Disciplina> preRequisitos = new ArrayList<Disciplina>();
 	
 	public int getCodDisciplina() {
@@ -38,22 +35,16 @@ public class Disciplina extends Entidade{
 	public void setCreditos(int creditos) {
 		this.creditos = creditos;
 	}
-	public Map<String, Integer> getHorario() {
-		return horario;
-	}
-	public void setHorario(Map<String, Integer> horario) {
-		this.horario = horario;
-	}
 	public ArrayList<Disciplina> getPreRequisitos() {
 		return preRequisitos;
 	}
 	public void setPreRequisitos(ArrayList<Disciplina> preRequisitos) {
 		this.preRequisitos = preRequisitos;
 	}
-	public int getTipo() {
+	public String getTipo() {
 		return tipo;
 	}
-	public void setTipo(int tipo) {
+	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
 	

@@ -5,6 +5,7 @@ public class Nota extends Entidade{
 	private String situacao;
 	private Aluno aluno;
 	private OfertaDisciplina oferta;
+	private int codNota;
 	
 	public Aluno getAluno() {
 		return aluno;
@@ -33,6 +34,13 @@ public class Nota extends Entidade{
 		this.situacao = situacao;
 	}
 	
+	public int getCodNota() {
+		return codNota;
+	}
+
+	public void setCodNota(int codNota) {
+		this.codNota = codNota;
+	}
 	public void setarNota(int indice, int nota){
 		this.notas[indice] = nota;
 	}
