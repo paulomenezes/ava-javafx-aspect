@@ -16,7 +16,7 @@ public abstract aspect PersistenciaMySQL {
         if (connection == null) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ava", "root", "");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ava", "root", "casa");
             } catch (Exception e) {
                 e.printStackTrace();
             }
