@@ -1,4 +1,4 @@
-package Excessões;
+package com.ufrpe.ava.excecoes;
 
 @SuppressWarnings("serial")
 public class ObjetoNaoExistenteExcepitions extends Exception{

@@ -1,7 +1,5 @@
 package com.ufrpe.ava.dados.entidades;
 
-public class Usuario {
-
 	/**
 	 * Created by paulomenezes on 20/11/15.
 	 */
@@ -77,4 +75,4 @@ public class Usuario {
 		}
 
 	}
-}
+

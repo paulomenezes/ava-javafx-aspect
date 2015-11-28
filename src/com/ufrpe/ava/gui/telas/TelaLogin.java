@@ -2,7 +2,7 @@ package com.ufrpe.ava.gui.telas;
 
 import com.ufrpe.ava.dados.entidades.Usuario;
 
-import Excessões.ObjetoNaoExistenteExcepitions;
+import com.ufrpe.ava.excecoes.ObjetoNaoExistenteExcepitions;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
