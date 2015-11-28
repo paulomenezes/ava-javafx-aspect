@@ -1,31 +1,48 @@
 package com.ufrpe.ava.negocio;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import java.util.ArrayList;
 
-public class AvaFachada extends Application {
-    private CadastroUsuario cadastroUsuario;
+import com.ufrpe.ava.dados.entidades.Usuario;
+
+import Excessões.ObjetoNaoExistenteExcepitions;
+
+public class AvaFachada implements IAvaFachada {
+    private ControladorUsuario controladorUsuario;
 
     public AvaFachada() {
-        cadastroUsuario = new CadastroUsuario();
+        controladorUsuario = new ControladorUsuario();
     }
 
-    public CadastroUsuario getCadastroUsuario() {
-        return cadastroUsuario;
-    }
+	@Override
+	public void cadastrarAluno() {
+		// TODO Auto-generated method stub
+		
+	}
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../gui/telas/login.fxml"));
-        primaryStage.setTitle("Login");
-        primaryStage.setScene(new Scene(root, 400, 300));
-        primaryStage.show();
-    }
+	@Override
+	public void cadastarProfessor() {
+		// TODO Auto-generated method stub
+		
+	}
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+	@Override
+	public Usuario login(String cpf, String senha) throws ObjetoNaoExistenteExcepitions {
+		
+		Usuario usuario = controladorUsuario.login(cpf, senha);
+		return usuario;
+	}
+
+	@Override
+	public ArrayList<Usuario> selecionarTudo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object cadastrarUsuario(String text, String text2, String text3, String text4) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+     
 }
