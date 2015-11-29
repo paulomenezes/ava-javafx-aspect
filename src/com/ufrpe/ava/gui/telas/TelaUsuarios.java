@@ -2,7 +2,7 @@ package com.ufrpe.ava.gui.telas;
 
 import java.util.List;
 
-import com.ufrpe.ava.dados.entidades.Usuario;
+import com.ufrpe.ava.negocio.classes_basicas.Usuario;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;

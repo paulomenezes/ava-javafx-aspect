@@ -1,13 +1,13 @@
 package com.ufrpe.ava.aspecto;
 
-import com.ufrpe.ava.dados.entidades.Usuario;
+import com.ufrpe.ava.negocio.classes_basicas.Usuario;
 import com.ufrpe.ava.util.Alertas;
 import com.ufrpe.ava.util.Funcoes;
 
 /**
  * Created by paulomenezes on 22/11/15.
  */
-public aspect Validacao {
+public aspect Autenticacao {
     pointcut validarCadastroUsuario(String cpf, String senha, String nome, String email):
         execution(Usuario com.ufrpe.ava.negocio.CadastroUsuario.cadastrarUsuario(String, String, String, String)) && args(cpf, senha, nome, email);
 

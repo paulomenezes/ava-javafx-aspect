@@ -2,9 +2,8 @@ package com.ufrpe.ava.negocio;
 
 import java.util.ArrayList;
 
-import com.ufrpe.ava.dados.entidades.Usuario;
-
 import com.ufrpe.ava.excecoes.ObjetoNaoExistenteExcepitions;
+import com.ufrpe.ava.negocio.classes_basicas.Usuario;
 
 /**
  * Created by paulomenezes on 20/11/15.

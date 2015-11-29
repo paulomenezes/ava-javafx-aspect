@@ -1,4 +1,4 @@
-package com.ufrpe.ava.dados.entidades;
+package com.ufrpe.ava.negocio.classes_basicas;
 
 	/**
 	 * Created by paulomenezes on 20/11/15.

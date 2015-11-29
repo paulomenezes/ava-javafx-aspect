@@ -1,4 +1,4 @@
-package com.ufrpe.ava.dados.entidades;
+package com.ufrpe.ava.negocio.classes_basicas;
 
 import java.util.ArrayList;
 
@@ -55,4 +55,40 @@ public class ProjetoPesquisa {
 	public void setProfessores(ArrayList<Professor> professores) {
 		this.professores = professores;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + codProjeto;
+		result = prime * result + ((modalidade == null) ? 0 : modalidade.hashCode());
+		result = prime * result + ((organizacao == null) ? 0 : organizacao.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ProjetoPesquisa other = (ProjetoPesquisa) obj;
+		if (codProjeto != other.codProjeto)
+			return false;
+		if (modalidade == null) {
+			if (other.modalidade != null)
+				return false;
+		} else if (!modalidade.equals(other.modalidade))
+			return false;
+		if (organizacao == null) {
+			if (other.organizacao != null)
+				return false;
+		} else if (!organizacao.equals(other.organizacao))
+			return false;
+		return true;
+	}
+	
+	
 }

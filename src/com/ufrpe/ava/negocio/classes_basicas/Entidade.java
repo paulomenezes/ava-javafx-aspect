@@ -1,4 +1,4 @@
-package com.ufrpe.ava.dados.entidades;
+package com.ufrpe.ava.negocio.classes_basicas;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

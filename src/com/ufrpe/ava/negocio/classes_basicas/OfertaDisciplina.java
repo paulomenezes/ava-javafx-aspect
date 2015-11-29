@@ -1,4 +1,4 @@
-package com.ufrpe.ava.dados.entidades;
+package com.ufrpe.ava.negocio.classes_basicas;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.ufrpe.ava.dados.entidades;
+package com.ufrpe.ava.negocio.classes_basicas;
 
 import java.util.ArrayList;
 
@@ -47,5 +47,35 @@ public class Disciplina extends Entidade{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + cargaHoraria;
+		result = prime * result + codDisciplina;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Disciplina other = (Disciplina) obj;
+		if (cargaHoraria != other.cargaHoraria)
+			return false;
+		if (codDisciplina != other.codDisciplina)
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		return true;
+	}
+	
 	
 }

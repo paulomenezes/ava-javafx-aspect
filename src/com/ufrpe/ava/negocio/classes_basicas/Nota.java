@@ -1,4 +1,6 @@
-package com.ufrpe.ava.dados.entidades;
+package com.ufrpe.ava.negocio.classes_basicas;
+
+import java.util.Arrays;
 
 public class Nota extends Entidade{
 	private int[] notas = new int[4];//1ª,2ª,3ª, final
@@ -44,4 +46,31 @@ public class Nota extends Entidade{
 	public void setarNota(int indice, int nota){
 		this.notas[indice] = nota;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + codNota;
+		result = prime * result + Arrays.hashCode(notas);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Nota other = (Nota) obj;
+		if (codNota != other.codNota)
+			return false;
+		if (!Arrays.equals(notas, other.notas))
+			return false;
+		return true;
+	}
+	
+	
 }

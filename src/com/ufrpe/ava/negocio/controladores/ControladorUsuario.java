@@ -1,10 +1,9 @@
-package com.ufrpe.ava.negocio;
+package com.ufrpe.ava.negocio.controladores;
 
 import java.util.ArrayList;
 
-import com.ufrpe.ava.dados.entidades.Usuario;
-
 import com.ufrpe.ava.excecoes.ObjetoNaoExistenteExcepitions;
+import com.ufrpe.ava.negocio.classes_basicas.Usuario;
 
 public class ControladorUsuario {
 	

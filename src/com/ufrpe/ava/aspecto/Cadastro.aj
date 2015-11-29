@@ -1,12 +1,13 @@
 package com.ufrpe.ava.aspecto;
 
-import com.ufrpe.ava.dados.entidades.Entidade;
-import com.ufrpe.ava.dados.entidades.Usuario;
 import java.lang.reflect.Method;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import com.ufrpe.ava.negocio.classes_basicas.Entidade;
+import com.ufrpe.ava.negocio.classes_basicas.Usuario;
 
 
 public aspect Cadastro extends ConnectMySQL {
