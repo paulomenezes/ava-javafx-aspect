@@ -8,17 +8,17 @@ import java.util.HashMap;
 
 import com.ufrpe.ava.negocio.classes_basicas.Entidade;
 import com.ufrpe.ava.negocio.classes_basicas.Usuario;
-
+import com.ufrpe.ava.negocio.controladores.ControladorUsuario;
 
 public aspect Cadastro extends ConnectMySQL {
 	
-	pointcut inserir(): call(* com.ufrpe.ava.negocio.ControladorUsuario.cadastrarUsuario(..));
+	pointcut inserir(): call(* ControladorUsuario.cadastrarUsuario(..));
     
-	pointcut selecionarTudo(): execution(* com.ufrpe.ava.negocio.ControladorUsuario.selecionarTudo());
+	pointcut selecionarTudo(): execution(* ControladorUsuario.selecionarTudo());
     
     //Pointcut LoginUsuario
     pointcut loginUsuario(String cpf, String senha): 
-    	call(* com.ufrpe.ava.negocio.ControladorUsuario.buscar(String, String)) && args(cpf, senha);
+    	call(* ControladorUsuario.buscar(String, String)) && args(cpf, senha);
 
     
     
