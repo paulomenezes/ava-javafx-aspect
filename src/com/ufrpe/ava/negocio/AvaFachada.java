@@ -3,6 +3,8 @@ package com.ufrpe.ava.negocio;
 import java.util.ArrayList;
 
 import com.ufrpe.ava.excecoes.ObjetoNaoExistenteExcepitions;
+import com.ufrpe.ava.negocio.classes_basicas.Aluno;
+import com.ufrpe.ava.negocio.classes_basicas.Professor;
 import com.ufrpe.ava.negocio.classes_basicas.Usuario;
 import com.ufrpe.ava.negocio.controladores.ControladorUsuario;
 
@@ -14,15 +16,13 @@ public class AvaFachada implements IAvaFachada {
     }
 
 	@Override
-	public void cadastrarAluno() {
-		// TODO Auto-generated method stub
-		
+	public Aluno cadastrarAluno(String nome, String cpf,String email, String senha,int codCurso,String tipo) {
+		return null;
 	}
 
 	@Override
-	public void cadastarProfessor() {
-		// TODO Auto-generated method stub
-		
+	public Professor cadastarProfessor(String nome, String cpf,String email, String senha,int idDepartamento) {
+		return null;
 	}
 
 	@Override
@@ -34,12 +34,6 @@ public class AvaFachada implements IAvaFachada {
 
 	@Override
 	public ArrayList<Usuario> selecionarTudo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object cadastrarUsuario(String text, String text2, String text3, String text4) {
 		// TODO Auto-generated method stub
 		return null;
 	}
