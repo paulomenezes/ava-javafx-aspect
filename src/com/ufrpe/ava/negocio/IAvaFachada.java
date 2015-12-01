@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.ufrpe.ava.excecoes.ObjetoJaExistenteExcepitions;
 import com.ufrpe.ava.excecoes.ObjetoNaoExistenteExcepitions;
-import com.ufrpe.ava.negocio.classes_basicas.Usuario;
+import com.ufrpe.ava.negocio.entidades.Usuario;
 
 /**
  * Created by paulomenezes on 20/11/15.

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import com.ufrpe.ava.excecoes.ObjetoJaExistenteExcepitions;
 import com.ufrpe.ava.excecoes.ObjetoNaoExistenteExcepitions;
-import com.ufrpe.ava.negocio.classes_basicas.Aluno;
-import com.ufrpe.ava.negocio.classes_basicas.Professor;
-import com.ufrpe.ava.negocio.classes_basicas.Usuario;
+import com.ufrpe.ava.negocio.entidades.Aluno;
+import com.ufrpe.ava.negocio.entidades.Professor;
+import com.ufrpe.ava.negocio.entidades.Usuario;
 
 public class ControladorUsuario {
 	
@@ -17,7 +17,7 @@ public class ControladorUsuario {
 		 
 		if(usuario == null){
 			
-			throw new ObjetoNaoExistenteExcepitions("Usuário",cpf);
+			throw new ObjetoNaoExistenteExcepitions("Usuï¿½rio",cpf);
 		}
 		
 		return usuario;

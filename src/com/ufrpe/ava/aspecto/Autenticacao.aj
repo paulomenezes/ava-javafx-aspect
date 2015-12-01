@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.ufrpe.ava.negocio.classes_basicas.Usuario;
+import com.ufrpe.ava.negocio.entidades.Usuario;
 import com.ufrpe.ava.negocio.controladores.ControladorUsuario;
+
 /**
  * Created by paulomenezes on 22/11/15.
  */
@@ -24,10 +25,7 @@ public aspect Autenticacao extends ConnectMySQL {
     pointcut loginUsuario(String cpf, String senha): 
     	call(* ControladorUsuario.buscarUsuario(String, String)) && args(cpf, senha);
 
-    
-    
     Usuario around(String cpf, String senha): loginUsuario(cpf, senha) {
- 
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM usuario WHERE cpf = ? and senha = ?");
             statement.setString(1, cpf);
@@ -51,7 +49,6 @@ public aspect Autenticacao extends ConnectMySQL {
 
             return null;
         } catch (Exception e) {
-            
         	System.out.println(e.getMessage());
             return null;
         }

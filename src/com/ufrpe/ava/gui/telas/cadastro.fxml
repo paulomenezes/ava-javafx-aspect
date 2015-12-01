@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" prefHeight="327.0" prefWidth="433.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ufrpe.ava.gui.telas.TelaCadastro">
+<GridPane alignment="center" hgap="10" prefHeight="327.0" prefWidth="433.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ufrpe.ava.gui.controladores.TelaCadastro">
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints />
