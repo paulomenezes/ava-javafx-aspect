@@ -9,14 +9,14 @@ package com.ufrpe.ava.negocio.classes_basicas;
 	    private String email;
 	    private String foto;
 	    private String senha;
-	    private char grad;
+	    private int grad;
 	    
 	    public Usuario(){
 	    	
 	    }
 	    
 
-	    public Usuario(String cpf, String nome, String email, String foto, String senha, char grad) {
+	    public Usuario(String cpf, String nome, String email, String foto, String senha, int grad) {
 			this.cpf = cpf;
 			this.nome = nome;
 			this.email = email;
@@ -26,11 +26,11 @@ package com.ufrpe.ava.negocio.classes_basicas;
 		}
 
 
-		public char getGrad() {
+		public int getGrad() {
 			return grad;
 		}
 
-		public void setGrad(char grad) {
+		public void setGrad(int grad) {
 			this.grad = grad;
 		}
 

@@ -2,6 +2,9 @@ package com.ufrpe.ava.gui.telas;
 
 import java.util.ArrayList;
 
+import com.ufrpe.ava.excecoes.ObjetoJaExistenteExcepitions;
+import com.ufrpe.ava.excecoes.ObjetoNaoExistenteExcepitions;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -140,8 +143,21 @@ public class TelaCadastro extends Tela {
     			
     			if(professorCheck.isSelected()){
     				
-    				this.avaFachada.cadastarProfessor(campoNome.getText(), campoCPF.getText(), campoEmail.getText(),
-    						campoSenha.getText(), Integer.parseInt(codDpto.getText()),'p');
+    				try {
+    					
+						this.avaFachada.cadastarProfessor(campoNome.getText(), campoCPF.getText(), campoEmail.getText(),
+								campoSenha.getText(), Integer.parseInt(codDpto.getText()),1);
+						
+					} catch (ObjetoNaoExistenteExcepitions e) {
+						// TODO Auto-generated catch block
+						System.out.println(e.getMessage());
+					} catch (ObjetoJaExistenteExcepitions e) {
+						// TODO Auto-generated catch block
+						System.out.println(e.getMessage());
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						System.out.println(e.getMessage());
+					}
     				
     			}else{
     				
@@ -155,8 +171,20 @@ public class TelaCadastro extends Tela {
     					tipoAluno = posGradCheck.getText();
     				}
     				
-    				this.avaFachada.cadastrarAluno(campoNome.getText(), campoCPF.getText(), campoEmail.getText(),
-    						campoSenha.getText(), Integer.parseInt(codCurso.getText()), tipoAluno,'a');
+    				try {
+						this.avaFachada.cadastrarAluno(campoNome.getText(), campoCPF.getText(), campoEmail.getText(),
+								campoSenha.getText(), Integer.parseInt(codCurso.getText()), tipoAluno,2);
+					
+					} catch (ObjetoNaoExistenteExcepitions e) {
+						// TODO Auto-generated catch block
+						System.out.println(e.getMessage());
+					} catch (ObjetoJaExistenteExcepitions e) {
+						// TODO Auto-generated catch block
+						System.out.println(e.getMessage());
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						System.out.println(e.getMessage());
+					}
     				
     			}
     			

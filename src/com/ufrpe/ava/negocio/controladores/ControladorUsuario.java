@@ -2,6 +2,7 @@ package com.ufrpe.ava.negocio.controladores;
 
 import java.util.ArrayList;
 
+import com.ufrpe.ava.excecoes.ObjetoJaExistenteExcepitions;
 import com.ufrpe.ava.excecoes.ObjetoNaoExistenteExcepitions;
 import com.ufrpe.ava.negocio.classes_basicas.Aluno;
 import com.ufrpe.ava.negocio.classes_basicas.Professor;
@@ -32,34 +33,27 @@ public class ControladorUsuario {
 		return null;
 	}
 	
-	public void cadastrarAluno(String nome, String cpf,String email, String senha,int codCurso,String tipo,char grad){
+	public void cadastrarAluno(String nome, String cpf,String email, String senha,int codCurso,String tipo,int grad) 
+			throws Exception,ObjetoNaoExistenteExcepitions,ObjetoJaExistenteExcepitions{
 		
 			Aluno aluno = new Aluno(nome,cpf,email,senha,grad,tipo, codCurso);
 			cadastrarUsuario(aluno);
 		
 	}
 	
-	public void cadastrarProfessor(String nome, String cpf,String email, String senha,int idDpto,char grad){
+	public void cadastrarProfessor(String nome, String cpf,String email, String senha,int idDpto,int grad) 
+			throws Exception,ObjetoNaoExistenteExcepitions,ObjetoJaExistenteExcepitions{
 		
 		Professor professor = new Professor(nome, cpf,email,senha,grad,idDpto);
 		cadastrarUsuario(professor);
 	}
 	
-	private void cadastrarUsuario(Usuario usuario){
+	private void cadastrarUsuario(Usuario usuario) throws Exception,ObjetoNaoExistenteExcepitions,ObjetoJaExistenteExcepitions{
 		//Chamado pelo AspectoCadastrar
 	}
 	
-	private boolean existeCurso(int codCurso){
-		
-		return buscaPorCodigo(codCurso,"curso");
-	}
 	
-	private boolean existeDepto(int codDpto){
-		
-		return buscaPorCodigo(codDpto,"departamento");
-	}
-	
-	
+	@SuppressWarnings("unused")
 	private boolean buscaPorCodigo(int codigo, String nomeTabela){
 		
 		return true;

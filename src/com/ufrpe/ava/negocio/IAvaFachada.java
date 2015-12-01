@@ -2,9 +2,8 @@ package com.ufrpe.ava.negocio;
 
 import java.util.ArrayList;
 
+import com.ufrpe.ava.excecoes.ObjetoJaExistenteExcepitions;
 import com.ufrpe.ava.excecoes.ObjetoNaoExistenteExcepitions;
-import com.ufrpe.ava.negocio.classes_basicas.Aluno;
-import com.ufrpe.ava.negocio.classes_basicas.Professor;
 import com.ufrpe.ava.negocio.classes_basicas.Usuario;
 
 /**
@@ -12,8 +11,10 @@ import com.ufrpe.ava.negocio.classes_basicas.Usuario;
  */
 public interface IAvaFachada {
 	
-	public Aluno cadastrarAluno(String nome, String cpf,String email, String senha,int codCurso,String tipo,char grad);
-	public Professor cadastarProfessor(String nome, String cpf,String email, String senha,int idDepartamento,char grad);
+	public void cadastrarAluno(String nome, String cpf,String email, String senha,int codCurso,String tipo,int grad) 
+			throws Exception,ObjetoNaoExistenteExcepitions,ObjetoJaExistenteExcepitions;
+	public void cadastarProfessor(String nome, String cpf,String email, String senha,int idDepartamento,int grad) 
+			throws Exception,ObjetoNaoExistenteExcepitions,ObjetoJaExistenteExcepitions;
 	public Usuario buscarLogin(String cpf, String senha)throws ObjetoNaoExistenteExcepitions;
 	public ArrayList<Usuario> selecionarTudo();
 

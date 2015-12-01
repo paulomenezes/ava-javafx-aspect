@@ -20,6 +20,8 @@ CREATE TABLE IF NOT EXISTS `ava`.`usuario` (
   `foto` LONGBLOB NULL DEFAULT NULL COMMENT '',
   `email` VARCHAR(25) NOT NULL COMMENT '',
   `senha` VARCHAR(15) NOT NULL COMMENT '',
+	grad  INT(2) NOT NULL,
+  
   PRIMARY KEY (`idUsuario`))
 DEFAULT CHARACTER SET = utf8;
 

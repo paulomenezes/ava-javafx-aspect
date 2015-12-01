@@ -9,7 +9,7 @@ public class Aluno extends Usuario{
 		
 	}
 	
-	public Aluno(String nome, String cpf,String email, String senha,char grad,String tipoAluno, int curso) {
+	public Aluno(String nome, String cpf,String email, String senha,int grad,String tipoAluno, int curso) {
 		super(cpf,nome,email, null, senha, grad);
 		this.tipoAluno = tipoAluno;
 		this.curso = curso;

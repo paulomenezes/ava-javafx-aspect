@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SuppressWarnings("serial")
-public class ObjetoJaExistenteEcepitions extends Exception {
+public class ObjetoJaExistenteExcepitions extends Exception {
 
 	private String nome;
 	private String especificacao;
@@ -12,7 +12,7 @@ public class ObjetoJaExistenteEcepitions extends Exception {
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm"); 
 
 	
-	public ObjetoJaExistenteEcepitions(String nome,String especificacao){
+	public ObjetoJaExistenteExcepitions(String nome,String especificacao){
 		
 		super(nome+" "+especificacao+" Já está cadastrado no sistema /Por favor tentar outro "+nome);
 		this.setNome(nome);
