@@ -16,19 +16,19 @@ public class AvaFachada implements IAvaFachada {
     }
 
 	@Override
-	public Aluno cadastrarAluno(String nome, String cpf,String email, String senha,int codCurso,String tipo) {
+	public Aluno cadastrarAluno(String nome, String cpf,String email, String senha,int codCurso,String tipo,char grad) {
 		return null;
 	}
 
 	@Override
-	public Professor cadastarProfessor(String nome, String cpf,String email, String senha,int idDepartamento) {
+	public Professor cadastarProfessor(String nome, String cpf,String email, String senha,int idDepartamento,char grad) {
 		return null;
 	}
 
 	@Override
-	public Usuario login(String cpf, String senha) throws ObjetoNaoExistenteExcepitions {
+	public Usuario buscarLogin(String cpf, String senha) throws ObjetoNaoExistenteExcepitions {
 		
-		Usuario usuario = controladorUsuario.login(cpf, senha);
+		Usuario usuario = controladorUsuario.buscarLogin(cpf, senha);
 		return usuario;
 	}
 

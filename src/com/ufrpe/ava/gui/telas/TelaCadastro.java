@@ -1,12 +1,9 @@
 package com.ufrpe.ava.gui.telas;
 
-import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
-import com.ufrpe.ava.gui.telas.Tela;
-
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -14,7 +11,7 @@ import javafx.scene.control.TextField;
 /**
  * Created by paulomenezes on 22/11/15.
  */
-public class TelaCadastro extends Tela implements EventHandler<Event> {
+public class TelaCadastro extends Tela {
     @FXML
     private TextField campoCPF;
 
@@ -53,6 +50,15 @@ public class TelaCadastro extends Tela implements EventHandler<Event> {
     
     @FXML
     private CheckBox posGradCheck; 
+   
+     
+    
+    public void desabilitar(){
+    	
+    	graduacaoCheck.setDisable(true);
+    	posGradCheck.setDisable(true);
+    }
+    
     
     
     public void clickGraduacaoCheck(){
@@ -115,60 +121,88 @@ public class TelaCadastro extends Tela implements EventHandler<Event> {
         trocarTela("login", botaoVoltar);
     }
 
-    public void botaoCriarContaAction() {
+	public void botaoCriarContaAction() {
         
     	
-    	//Validação dos Checks
-    	if(!alunoCheck.isSelected() && !professorCheck.isSelected() && !graduacaoCheck.isSelected() && !posGradCheck.isSelected()){
-    		
-    		JOptionPane.showMessageDialog(null,"Campos Aluno ou Professor não foram escolhidos corretamete!! /n Por favor escolha uma Opção");
+    	ArrayList<String>listaValidacao = new ArrayList<String>();
+    	listaValidacao.add(campoCPF.getText());
+    	listaValidacao.add(campoEmail.getText());
+    	listaValidacao.add(campoNome.getText());
+    	listaValidacao.add(campoSenha.getText());
+    	listaValidacao.add(campoReSenha.getText());
     	
-    	}else{
+    	if(this.validarCampos(listaValidacao) && validarCheckBox()){
+    	     
     		
-    		//Validação das entradas
-    		if(!campoCPF.getText().isEmpty() && !campoNome.getText().isEmpty() && 
-    				!campoEmail.getText().isEmpty() && !campoSenha.getText().isEmpty() && 
-    					!campoReSenha.getText().isEmpty() && !codCurso.getText().isEmpty() && !codDpto.getText().isEmpty()){
+    		if(this.validarSenha(campoSenha.getText(), campoReSenha.getText()) &&  this.validarEmail(campoEmail.getText()) && 
+    				this.validarCpf(campoCPF.getText()) ){
     			
-    			//Se o usuario é um professor
+    			
     			if(professorCheck.isSelected()){
     				
-    				this.avaFachada.cadastarProfessor(campoNome.getText(), campoCPF.getText(), campoEmail.getText(), 
-    						campoSenha.getText(), Integer.parseInt(codDpto.getText()));
-    			
-    			//Se o usuario é um Aluno
+    				this.avaFachada.cadastarProfessor(campoNome.getText(), campoCPF.getText(), campoEmail.getText(),
+    						campoSenha.getText(), Integer.parseInt(codDpto.getText()),'p');
+    				
     			}else{
     				
-    				String tipo;
+    				String tipoAluno;
     				
     				if(graduacaoCheck.isSelected()){
     					
-    					tipo = graduacaoCheck.getText();
-    				
+    					tipoAluno = graduacaoCheck.getText();
     				}else{
     					
-    					tipo = posGradCheck.getText();
+    					tipoAluno = posGradCheck.getText();
     				}
     				
-    				this.avaFachada.cadastrarAluno(campoNome.getText(), campoCPF.getText(), campoEmail.getText(), 
-    						campoSenha.getText(), Integer.parseInt(codCurso.getText()),tipo);
+    				this.avaFachada.cadastrarAluno(campoNome.getText(), campoCPF.getText(), campoEmail.getText(),
+    						campoSenha.getText(), Integer.parseInt(codCurso.getText()), tipoAluno,'a');
+    				
     			}
     			
     			
     		}else{
     			
-    			JOptionPane.showMessageDialog(null,"Preencha todos os campos !!");
+    			Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Login inválido");
+                alert.setHeaderText("CPF, senha ou Email inválido");
+                alert.showAndWait();
     		}
-        	
-        	
-       }
-    }
+    		
+    		
+    	}else{
+    		
+    		 Alert alert = new Alert(Alert.AlertType.INFORMATION);
+             alert.setTitle("Campos obrigatórios");
+             alert.setHeaderText("Por favor preencher os campos corretamente !!");
+             alert.showAndWait();
+        }
+    	
+    	
+    		
+      }
+    	
 
-
-	@Override
-	public void handle(Event event) {
-		// TODO Auto-generated method stub
+	private Boolean validarCheckBox(){
 		
+		if(!professorCheck.isSelected() && !alunoCheck.isSelected()){
+			
+			return false;
+		
+		}else if(alunoCheck.isSelected() && !codCurso.getText().isEmpty()){
+			
+			if( !graduacaoCheck.isSelected() && !posGradCheck.isSelected()){
+				return false;
+			}else{
+				return true;
+			}
+		}else if (professorCheck.isSelected() && !alunoCheck.isSelected() && !codDpto.getText().isEmpty()){
+
+				return true;			
+		}else{
+			
+			return false;
+		}
 	}
     
     

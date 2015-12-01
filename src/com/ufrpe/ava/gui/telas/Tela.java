@@ -1,7 +1,11 @@
 package com.ufrpe.ava.gui.telas;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 import com.ufrpe.ava.negocio.AvaFachada;
 import com.ufrpe.ava.negocio.IAvaFachada;
+import com.ufrpe.ava.negocio.classes_basicas.Usuario;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,14 +14,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 /**
  * Created by paulomenezes on 20/11/15.
  */
 public class Tela extends Application {
-    public IAvaFachada avaFachada = new AvaFachada();
-
+    
+	public IAvaFachada avaFachada = new AvaFachada();
+	public Usuario usuarioAtivo;
+	
     public void trocarTela(String tela, Button botao) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(tela + ".fxml"));
@@ -53,5 +57,20 @@ public class Tela extends Application {
 		launch(args);
 	}
 	
-	
+	 public boolean validarCpf(String cpf) {
+	    return true;
+	 }
+
+	 public boolean validarEmail(String email) {
+	     return true; 
+	 }
+	    
+	 public boolean validarCampos(ArrayList<String> lista){
+			return true; 
+	 }
+		    
+	public boolean validarSenha(String s1, String s2){
+		    
+		return true;
+	}
 }

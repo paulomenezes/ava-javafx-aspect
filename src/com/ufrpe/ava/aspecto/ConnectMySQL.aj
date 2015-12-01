@@ -9,6 +9,7 @@ import java.util.Map;
 public abstract aspect ConnectMySQL {
 
 	 public static Connection connection = getConnection();
+	 
 
 	    public static Connection getConnection() {
 	        if (connection == null) {
@@ -26,6 +27,7 @@ public abstract aspect ConnectMySQL {
 
 	    public void inserir(String tabela, HashMap<String, Object> nomeValor) {
 	        try {
+	        	
 	            String colunas = "";
 	            String camposQuantidade = "";
 

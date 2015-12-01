@@ -1,5 +1,7 @@
 package com.ufrpe.ava.util;
 
+
+
 import javafx.scene.control.Alert;
 
 /**
@@ -15,10 +17,11 @@ public class Alertas {
     }
 
     public static void campoInvalido(String mensagem) {
-        alerta("Campo inv√°lido", mensagem, Alert.AlertType.ERROR);
+        alerta("Campo Inv·lido", mensagem, Alert.AlertType.ERROR);
     }
 
     public static void campoObrigatorio(String mensagem) {
-        alerta("Campo obrigat√≥rio", mensagem, Alert.AlertType.INFORMATION);
+        alerta("Campo ObrigatÛrio", mensagem, Alert.AlertType.INFORMATION);
     }
+    
 }

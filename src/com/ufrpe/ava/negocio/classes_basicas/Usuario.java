@@ -4,18 +4,42 @@ package com.ufrpe.ava.negocio.classes_basicas;
 	 * Created by paulomenezes on 20/11/15.
 	 */
 	public class Usuario extends Entidade {
-	    private String CPF;
+	    private String cpf;
 	    private String nome;
 	    private String email;
 	    private String foto;
 	    private String senha;
+	    private char grad;
+	    
+	    public Usuario(){
+	    	
+	    }
+	    
 
-	    public String getCPF() {
-	        return CPF;
+	    public Usuario(String cpf, String nome, String email, String foto, String senha, char grad) {
+			this.cpf = cpf;
+			this.nome = nome;
+			this.email = email;
+			this.foto = foto;
+			this.senha = senha;
+			this.grad = grad;
+		}
+
+
+		public char getGrad() {
+			return grad;
+		}
+
+		public void setGrad(char grad) {
+			this.grad = grad;
+		}
+
+		public String getCPF() {
+	        return cpf;
 	    }
 
 	    public void setCPF(String CPF) {
-	        this.CPF = CPF;
+	        this.cpf = CPF;
 	    }
 
 	    public String getNome() {
@@ -49,30 +73,7 @@ package com.ufrpe.ava.negocio.classes_basicas;
 	    public void setSenha(String senha) {
 	        this.senha = senha;
 	    }
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = super.hashCode();
-			result = prime * result + ((CPF == null) ? 0 : CPF.hashCode());
-			return result;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (!super.equals(obj))
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			Usuario other = (Usuario) obj;
-			if (CPF == null) {
-				if (other.CPF != null)
-					return false;
-			} else if (!CPF.equals(other.CPF))
-				return false;
-			return true;
-		}
+	
 
 	}
 

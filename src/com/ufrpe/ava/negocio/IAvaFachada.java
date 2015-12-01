@@ -12,9 +12,9 @@ import com.ufrpe.ava.negocio.classes_basicas.Usuario;
  */
 public interface IAvaFachada {
 	
-	public Aluno cadastrarAluno(String nome, String cpf,String email, String senha,int codCurso,String tipo);
-	public Professor cadastarProfessor(String nome, String cpf,String email, String senha,int idDepartamento);
-	public Usuario login(String cpf, String senha)throws ObjetoNaoExistenteExcepitions;
+	public Aluno cadastrarAluno(String nome, String cpf,String email, String senha,int codCurso,String tipo,char grad);
+	public Professor cadastarProfessor(String nome, String cpf,String email, String senha,int idDepartamento,char grad);
+	public Usuario buscarLogin(String cpf, String senha)throws ObjetoNaoExistenteExcepitions;
 	public ArrayList<Usuario> selecionarTudo();
 
 }

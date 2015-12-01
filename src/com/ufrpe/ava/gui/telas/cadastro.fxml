@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" prefHeight="327.0" prefWidth="433.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ufrpe.ava.gui.telas.Cadastro">
+<GridPane alignment="center" hgap="10" prefHeight="327.0" prefWidth="433.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ufrpe.ava.gui.telas.TelaCadastro">
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints />
@@ -40,8 +40,8 @@
             <TextField fx:id="codCurso" layoutX="192.0" layoutY="213.0" prefHeight="25.0" prefWidth="32.0" />
             <Label layoutX="103.0" layoutY="188.0" text="Codigo depto" />
             <Label layoutX="103.0" layoutY="217.0" text="Codigo curso" />
-            <CheckBox fx:id="graduacaoCheck" layoutX="9.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#clickGraduacaoCheck" text="graduação" />
-            <CheckBox fx:id="posGradCheck" layoutX="9.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#clickPosGradCheck" text="pós-graduação" />
+            <CheckBox fx:id="graduacaoCheck" disable="true" layoutX="9.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#clickGraduacaoCheck" text="graduação" />
+            <CheckBox fx:id="posGradCheck" disable="true" layoutX="9.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#clickPosGradCheck" text="pós-graduação" />
             </children>
         </Pane>
     </children>

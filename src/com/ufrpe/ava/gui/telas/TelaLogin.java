@@ -1,7 +1,8 @@
 package com.ufrpe.ava.gui.telas;
 
+import java.util.ArrayList;
+
 import com.ufrpe.ava.excecoes.ObjetoNaoExistenteExcepitions;
-import com.ufrpe.ava.negocio.classes_basicas.Usuario;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -22,21 +23,17 @@ public class TelaLogin extends Tela {
     private Button botaoCriarConta;
 
     public void botaoEntrarAction() {
-        System.out.println("CPF: " + campoCPF.getText());
-        System.out.println("Senha: " + campoSenha.getText());
+    	
+    	ArrayList<String>listaValidacao = new ArrayList<>();
+    	listaValidacao.add(campoCPF.getText());
+    	listaValidacao.add(campoSenha.getText());
 
-        if (campoCPF.getText().length() > 0 && campoSenha.getText().length() > 0) {
-            Usuario usuario;
+        if (this.validarCampos(listaValidacao)) {
+        		
 			try {
-				   usuario = this.avaFachada.login(campoCPF.getText(), campoSenha.getText());
-				   if (usuario != null) {
-		                trocarTela("telaUsuarios", botaoCriarConta);
-		            } else {
-		                Alert alert = new Alert(Alert.AlertType.ERROR);
-		                alert.setTitle("Login inválido");
-		                alert.setHeaderText("CPF ou senha inválido");
-		                alert.showAndWait();
-		            }
+				   this.usuarioAtivo = this.avaFachada.buscarLogin(campoCPF.getText(), campoSenha.getText());
+				   trocarTela("telaUsuarios", botaoCriarConta);
+		           
 			} catch (ObjetoNaoExistenteExcepitions e) {
 				
 				System.out.println(e.getMessage());
@@ -69,4 +66,5 @@ public class TelaLogin extends Tela {
 
         trocarTela("cadastro", botaoCriarConta);
     }
+    
 }
